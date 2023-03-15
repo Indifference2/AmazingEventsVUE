@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" href="../style/style.css">
+    <title>Amazing Events | Contact</title>  
+</head>
+<body>
+    <header class="bg-dark bg-gradient">
+        <nav class="navbar navbar-expand-lg" data-bs-theme="dark">
+            <div class="container-fluid ">
+                <img id="logo" src="../images/Logo_Amazing_Events.png" alt="logo_amazing_events">
+                <button class="navbar-toggler bg_white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+                    <ul class="navbar-nav mb-1 column-gap-3 me-5">
+                        <li class="nav-item">
+                            <a class="nav-link p-2" href="../index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link p-2" href="./upcoming_events.html"> Upcoming Events</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link p-2" href="./past_events.html">Past Events</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active p-2" href="#">Contact</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link p-2" href="./stats.html">Stats</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main class="bg-dark w-100">
+        <div id="carouselPage" class="carousel slide">
+            <div class="carousel-inner">
+                <section class="carousel-item active">
+                    <h1 class="d-flex justify-content-center align-items-center">Contact us</h1>
+                </section>
+            </div>
+                <span class="carousel-control-prev" role="button" data-bs-target="#carouselPage">
+                    <a href="./past_events.html">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    </a>
+                </span>
+                <span class="carousel-control-next" data-bs-target="#carouselPage">
+                    <a href="./stats.html"
+                        ><span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    </a>
+                </span>
+        </div>
+        <div class="container d-flex flex-column p-4 col-12 col-md-10 col-lg-6">
+            <div>
+                <label for="f_name">Name</label>
+                <input type="text" class="form-control" id="f_name" placeholder='Your name'>
+            </div>
+            <div>
+                <label for="email">Email:</label>
+                <input type="email" class="form-control" id="email" placeholder="name@example.com">
+            </div>
+            <div>
+                <label for="message">Message:</label>
+                <textarea name="message" id="message" cols="30" rows="10" class="form-control"></textarea>
+            </div>
+            <button type="submit" class="btn btn-secondary align-self-end mt-4">Submit</button>
+        </div>
+    </main>
+    <footer class="bg-dark bg-gradient d-flex align-items-center">
+        <nav class="navbar w-100 mw-100">     
+                <div class="d-flex align-items-center justify-content-center ms-4">
+                    <a href="#">
+                        <img class="width_footer_logos" src="../images/instagram_logo.png" alt="instagram_logo">
+                    </a>
+                    <a class="" href="#">
+                        <img class="width_footer_logos" src="../images/facebook_logo.png" alt="facebook_logo">
+                    </a>
+                    <a class="" href="#">
+                        <img class="width_footer_logos" src="../images/whatsapp_logo.png" alt="whatsapp_logo">
+                    </a>
+                </div>
+                <p class="cohort_footer mb-0 me-5">Cohort</p>
+        </nav>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+</body>
+</html>
