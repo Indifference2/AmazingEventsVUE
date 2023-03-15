@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" href="./style/style.css">
+    <title>Amazing Events</title>  
+</head>
+<body>
+    <header class="bg-dark bg-gradient">
+        <nav class="navbar navbar-expand-lg" data-bs-theme="dark">
+            <div class="container-fluid ">
+                <img id="logo"src="./images/Logo_Amazing_Events.png" alt="logo_amazing_events">
+                <button class="navbar-toggler bg_white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+                    <ul class="navbar-nav mb-1 column-gap-3 me-5">
+                        <li class="nav-item">
+                            <a class="nav-link active p-2" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link p-2" href="./pages/upcomingEvents.html"> Upcoming Events</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link p-2" href="./pages/pastEvents.html">Past Events</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link p-2" href="./pages/contact.html">Contact</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link p-2" href="./pages/stats.html">Stats</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div id="carouselPage" class="carousel slide">
+            <div class="carousel-inner">
+                <section class="carousel-item active">
+                    <h1 class="d-flex justify-content-center align-items-center">Home</h1>
+                </section>
+            </div>
+            <span class="carousel-control-next" data-bs-target="#carouselPage">
+                <a href="./pages/upcomingEvents.html">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                </a>
+            </span>
+        </div>
+    </header>
+    
+    <main id="app" class="bg-dark d-flex flex-wrap flex-column align-items-center">
+        <div class="d-flex flex-wrap justify-content-center">
+            <form class="d-flex flex-wrap gap-4 col-10 mt-4 mb-4">
+                <div v-for="category of categories">
+                    <label>
+                        <input @change="filterCross" class="form-check-input" type="checkbox" v-model="checked" :value="category">
+                        {{category}}
+                    </label>
+                </div>
+            </form>
+            <form class="d-flex gap-4 col-10">
+                <input @input="filterCross" v-model="valueSearch" type="search" class="form-control" placeholder="Example: Aladdin"> 
+            </form>
+        </div>
+        <div class="d-flex flex-wrap justify-content-center mt-5 gap-2 gap-sm-5">
+            <template v-if="eventsFiltered.length > 0" v-for='item of eventsFiltered'>
+                <div class="card text-bg-secondary mb-4 card_style">
+                    <img class="card-img-top img_card_height" :src="item.image" :alt="item.name">
+                    <div class="card-body d-flex flex-column align-content-between justify-content-between">
+                        <h5 class="card-title">{{item.name}}</h5>
+                        <p class="card-description d-flex justify-content-between align-items-center">{{item.description}}</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <p class="card-text">Price: ${{item.price}}</p>
+                            <a href="./pages/details.html?id=${event._id}" class="btn btn-dark">More info</a>
+                        </div>
+                    </div>
+                </div>
+            </template>
+            <template v-else>
+                <h2>Sorry, the event was not found. Check your filters</h2> 
+            </template>
+            </div>
+    </main>
+
+    <footer class="bg-dark bg-gradient d-flex align-items-center">
+        <nav class="navbar w-100 mw-100">     
+                <div class="d-flex align-items-center justify-content-center ms-4">
+                    <a href="#">
+                        <img class="width_footer_logos" src="./images/instagram_logo.png" alt="instagram_logo">
+                    </a>
+                    <a class="" href="#">
+                        <img class="width_footer_logos" src="./images/facebook_logo.png" alt="facebook_logo">
+                    </a>
+                    <a class="" href="#">
+                        <img class="width_footer_logos" src="./images/whatsapp_logo.png" alt="whatsapp_logo">
+                    </a>
+                </div>
+                <p class="cohort_footer mb-0 me-5">Cohort</p>
+        </nav>
+    </footer>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="./js/index.js"></script>
+</body>
+</html>

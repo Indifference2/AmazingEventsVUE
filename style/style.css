@@ -1,0 +1,81 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+#logo{
+    width: 10rem;
+}
+
+header{
+    min-height: 9vh;
+}
+
+main{
+    background-color: black;
+    min-height: 82vh;
+}
+
+footer{
+    min-height: 9vh;
+}
+
+h1{
+    background-color: rgb(155, 154, 154);
+    height: 5rem;
+}
+
+h2{
+    color: white;
+}
+
+label{
+    color: aliceblue;
+}
+
+.spacing_category{
+    gap: 1rem!important;
+}
+
+.bg_white{
+    background-color: white;
+}
+
+.width_footer_logos{
+    width: 3rem;
+}
+
+.img_card_height{
+    height: 10rem;
+}
+
+.cohort_footer{
+    color: black;
+    font-weight: bold;
+}
+
+.text_white{
+    color: white;
+}
+
+.box_cards_detail{
+    height: 10rem;
+}
+
+.price{
+    margin: 0;
+}
+
+.img_detail{
+    width: 15rem;
+    height: 10rem;
+}
+
+.card_style{
+    width: 18rem; 
+    height:23rem;
+}
+
+
