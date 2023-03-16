@@ -6,7 +6,7 @@ const app = createApp({
             upcomingEvents : [],
             checked : [],
             valueSearch : "",
-            upcomingEventsFiltered : [],
+            upcomingEventsFiltered : undefined,
             categories : [],
         }
     },

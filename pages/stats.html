@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" href="../style/style.css">
+    <title>Amazing Events | Stats</title>  
+</head>
+<body>
+    <header class="bg-dark bg-gradient">
+        <nav class="navbar navbar-expand-lg" data-bs-theme="dark">
+            <div class="container-fluid ">
+                <img id="logo" src="../images/Logo_Amazing_Events.png" alt="logo_amazing_events">
+                <button class="navbar-toggler bg_white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+                    <ul class="navbar-nav mb-1 column-gap-3 me-5">
+                        <li class="nav-item">
+                            <a class="nav-link p-2" href="../index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link p-2" href="./upcomingEvents.html"> Upcoming Events</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link p-2" href="./pastEvents.html">Past Events</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link p-2" href="./contact.html">Contact</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active p-2" href="#">Stats</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div id="carouselPage" class="carousel slide">
+            <div class="carousel-inner">
+                <section class="carousel-item active">
+                    <h1 class="d-flex justify-content-center align-items-center">Stats</h1>
+                </section>
+            </div>
+                <span class="carousel-control-prev" data-bs-target="#carouselPage">
+                    <a href="./contact.html">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    </a>
+                </span>
+        </div>
+    </header>
+    <main id="app" class="bg-dark d-flex justify-content-center">
+        <div class="d-flex flex-column col-12 col-lg-12 p-2 p-sm-2 p-lg-4">
+            <table class="table mb-4 table-secondary">
+                <thead>
+                    <tr>
+                        <th colspan="5">Events statistics</th>
+                    </tr>
+                    <tr class="table-light">
+                        <th class="col-4">Event with the highest percentage of attendance</th>
+                        <th class="col-4">Event with the lowest percentage of attendance</th>
+                        <th>Event with larger capacity</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>{{HighestPercentageEventName}}</td>
+                        <td>{{LowestEventPercentageName}}</td>
+                        <td>{{LargestCapacityEventName}}</td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table mb-4 table-secondary">
+                <thead>
+                    <tr>
+                        <th colspan="3">Upcoming events statistics by category</th>
+                    </tr>
+                    <tr class="table-light">
+                        <th class="col-4">Categories</th>
+                        <th class="col-4">Revenues</th>
+                        <th>Percentage of attendance</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <template v-for="item of statsUpComingEvents">
+                        <tr>
+                            <td>{{item.category}}</td>
+                            <td>${{item.revenue}}</td>
+                            <td>{{item.percentage}}%</td>
+                        </tr>
+                    </template>
+                </tbody>
+            </table>
+            <table class="table mb-4 table-secondary col-lg-4">
+                <thead>
+                    <tr>
+                        <th colspan="3">Past events statistic by category</th>
+                    </tr>
+                    <tr class="table-light">
+                        <th class="col-4">Categories</th>
+                        <th class="col-4">Revenues</th>
+                        <th>Percentage of attendance</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <template v-for="item of statsPastEvents">
+                        <tr>
+                            <td>{{item.category}}</td>
+                            <td>${{item.revenue}}</td>
+                            <td>{{item.percentage}}%</td>
+                        </tr>
+                    </template>
+                </tbody>
+            </table>
+        </div>
+    </main>
+    <footer class="bg-dark bg-gradient d-flex align-items-center">
+        <nav class="navbar w-100 mw-100">     
+                <div class="d-flex align-items-center justify-content-center ms-4">
+                    <a href="#">
+                        <img class="width_footer_logos" src="../images/instagram_logo.png" alt="instagram_logo">
+                    </a>
+                    <a class="" href="#">
+                        <img class="width_footer_logos" src="../images/facebook_logo.png" alt="facebook_logo">
+                    </a>
+                    <a class="" href="#">
+                        <img class="width_footer_logos" src="../images/whatsapp_logo.png" alt="whatsapp_logo">
+                    </a>
+                </div>
+                <p class="cohort_footer mb-0 me-5">Cohort</p>
+        </nav>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@3/dist/vue.global.js"></script>
+    <script src="../js/stats.js"></script>
+</body>
+</html>
