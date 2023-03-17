@@ -53,7 +53,6 @@ const app = createApp({
                     acc += (currentEvent.assistance * currentEvent.price)
                     return acc
                 }, 0)
-                console.log(revenue)
                 const totalAssistance = pastEventsByCategory.reduce((acc, currentEvent) =>{
                     acc += currentEvent.assistance
                     return acc

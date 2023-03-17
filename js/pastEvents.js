@@ -5,7 +5,7 @@ const app = createApp({
         return{
             pastEvents: [],
             categories: [],
-            pastEventsFiltered: undefined,
+            pastEventsFiltered: [{},{}],
             valueSearch : "",
             checked : []
         }

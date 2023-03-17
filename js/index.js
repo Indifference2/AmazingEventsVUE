@@ -7,7 +7,7 @@ const app = createApp({
             categories : [],
             events: [],
             checked: [],
-            eventsFiltered : undefined
+            eventsFiltered : [{},{}]
         }
     },
     created(){
